@@ -4,8 +4,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Briefcase, Plus } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export function EmptyProjectsState() {
+  const router = useRouter()
+
+  const onCreateNewProject = () => {
+    router.push("/new-project")
+  }
   return (
     <Card>
       <CardHeader>
@@ -26,7 +32,7 @@ export function EmptyProjectsState() {
           <p className="text-muted-foreground mb-6 max-w-md">
             Start by creating a new project or wait for invitations from clients
           </p>
-          <Button>
+          <Button onClick={onCreateNewProject}>
             <Plus className="mr-2 h-4 w-4" />
             Create New Project
           </Button>
