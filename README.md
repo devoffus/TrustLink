@@ -22,7 +22,48 @@ TrustLink is a decentralized freelance platform built on the LUKSO blockchain th
 - **UI/UX**: Framer Motion for animations, Lucide for icons
 
 ## Getting Started
+```mermaid
+graph TD;
+    subgraph Client_Side
+        A[Next.js Frontend] -->|React, TypeScript| B[Components]
+        B --> C[Layouts]
+        B --> D[Projects]
+        B --> E[Milestones]
+        B --> F[Skills]
+        B --> G[Transactions]
+        B --> H[UP-Profile]
+        B --> I[UI shadcn/ui]
+        A -->|Zustand| J[State Management]
+        J -->|immer, persist| K[Stores]
+        A -->|Framer Motion| L[Animations]
+        A -->|Lucide| M[Icons]
+        A -->|Tailwind CSS| N[Styling]
+    end
 
+    subgraph Blockchain_Integration
+        O[LUKSO Blockchain] -->|Web3.js, ERC725.js| P[Smart Contracts]
+        P --> Q[EscrowFactory]
+        P --> R[Escrow]
+        O -->|SIWE| S[Authentication]
+        O -->|Universal Profile| T[Identity]
+    end
+
+    subgraph Interactions
+        A -->|Connects to| O
+        D -->|Creates| Q
+        E -->|Submits/Verifies| R
+        G -->|Tracks| O
+        F -->|NFT-based| T
+        R -->|Manages| U[Funds]
+        R -->|Handles| V[Disputes]
+        R -->|Records| W[Milestones]
+    end
+
+    subgraph Environment
+        X[Development Mode] -->|Mock Contracts| A
+        Y[Production Mode] -->|Real Blockchain| O
+    end
+```
 ### Prerequisites
 
 - Node.js 16+

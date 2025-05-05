@@ -12,7 +12,7 @@ export default function Home() {
   const { upProfile, isAuthenticated } = useUPAuth()
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen">
         <DashboardLayout>
           <div className="container mx-auto px-4 py-8">
